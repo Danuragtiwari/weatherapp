@@ -1,0 +1,49 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel=" icon" href="{% static 'download.png' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Weather App</title>
+</head>
+
+
+<body>
+    <div class="container">
+    <form method="POST">
+       {% csrf_token %}
+       <input type="text" placeholder="Enter your City" name="city" required style=" width: 42%;
+       text-align: center;
+       border-radius: 10px;
+       height: 30px;margin:auto;    font-weight: bolder;">
+       <button type="submit">Submit</button>
+    </form>
+    {% comment %} <h1>Aish kr bhai</h1> {% endcomment %}
+    {% comment %} 
+        {{t2}}
+    {% endcomment %}
+    
+    {% comment %} <h2>{{icon}}</h2> {% endcomment %}
+    <div class="conatiner1">
+        <h2>{{temp}} &deg <span>C</span> </h2>
+        <div class="container2">
+        <img src="http://openweathermap.org/img/w/{{icon}}.png"  style=" width:50px;"/>
+      </div>
+        <h2>{{city}}</h2>
+        <p style="text-align:center;width:88%;padding:0 0 0 0%;">{{disc}}</p> 
+
+    </div>
+    
+   
+    {% comment %} <h2>{{city}}</h2> {% endcomment %}
+    {% comment %} <div>{{r2}}</div> {% endcomment %}
+</div>
+
+</body>
+
+</html>
+{% comment %} {% end static%} {% endcomment %}
